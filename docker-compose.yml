@@ -36,9 +36,9 @@ services:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
         - USER=${USER:-laravel}
-    container_name: php
+    container_name: php82
     ports:
-      - ":9000"
+      - "9000:9000"
     volumes:
       - ./src:/var/www/html
       - .env:/var/www/html/.env
@@ -47,7 +47,7 @@ services:
 
   mysql:
     image: mariadb:10.11
-    container_name: mysql
+    container_name: mariadb
     restart: unless-stopped
     tty: true
     ports:
